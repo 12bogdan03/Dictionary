@@ -4,7 +4,7 @@ class TextFixer:
                                   'p': 'р', 'a': 'а', 'x': 'х', 'c': 'с',
                                   'E': 'е', 'O': 'о', 'P': 'р', 'A': 'а',
                                   'H': 'Н', 'K': 'К', 'X': 'Х', 'C': 'С',
-                                  'B': 'В', ' M': 'M', 'T':'Т','I':'І'}
+                                  'B': 'В', ' M': 'M', 'T': 'Т', 'I': 'І'}
 
     def fix(self, text: str):
         for eng_s, ukr_s in self.symbols_to_change.items():

@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, QtSql
 
 
 class MainWindow(QtWidgets.QWidget):
@@ -17,6 +17,10 @@ class MainWindow(QtWidgets.QWidget):
                                                          'Алфавітний покажчик'
                                                          '</span></p></body></html>',
                                                          self)
+        self.db = QtSql.QSqlDatabase.addDatabase('QSQLITE')
+        self.db.setDatabaseName('context.db')
+        self.model = QtSql.QSqlTableModel()
+
         self.setupUi()
 
     def setupUi(self):
@@ -47,10 +51,26 @@ class MainWindow(QtWidgets.QWidget):
             )
 
     def center(self):
+        self.setFixedSize(750, 600)
         qr = self.frameGeometry()
         cp = QtWidgets.QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
+
+    def initializeModel(self):
+        self.model.setTable('bigramhpNunverb')
+        self.model.setEditStrategy(QtSql.QSqlTableModel.OnFieldChange)
+        self.model.select()
+        self.model.setHeaderData(0, QtCore.Qt.Horizontal, "ID")
+        self.model.setHeaderData(1, QtCore.Qt.Horizontal, "First name")
+        self.model.setHeaderData(2, QtCore.Qt.Horizontal, "Last name")
+
+
+    def search_word(self):
+        self.model.setTable('sportsmen')
+        self.model.setEditStrategy(QtSql.QSqlTableModel.OnFieldChange)
+
+        model.select()
 
 
 if __name__ == '__main__':
