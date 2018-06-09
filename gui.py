@@ -1,7 +1,6 @@
 import sys
 import sqlite3
 
-from lemmatization import get_lemma
 from PyQt5 import QtCore, QtWidgets
 
 
@@ -81,7 +80,6 @@ class MainWindow(QtWidgets.QWidget):
         search_for = self.word_input.text()
         if self.lemmatize_checkbox.isChecked():
             unit1, unit2 = 'lem1', 'lem2'
-            search_for = get_lemma(search_for)
         else:
             unit1, unit2 = 'word1', 'word2'
 
