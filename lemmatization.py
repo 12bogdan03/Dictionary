@@ -7,7 +7,7 @@ lemmas_dict = json.load(open('lemmas.json'))
 
 
 def get_lemma(word):
-    return lemmas_dict.get(word)
+    return lemmas_dict.get(word, word)
 
 
 # class Lemmatizer:
