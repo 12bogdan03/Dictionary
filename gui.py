@@ -10,7 +10,7 @@ class MainWindow(QtWidgets.QWidget):
         self.style = QtWidgets.QComboBox(self)
         self.word_input = QtWidgets.QLineEdit('Введіть слово', self)
         self.search_btn = QtWidgets.QPushButton('Пошук', self)
-        self.lemmatize_checkbox = QtWidgets.QCheckBox('Лематизувати', self)
+        self.lemmatize_checkbox = QtWidgets.QCheckBox('Пошук за лемами', self)
         self.letters_list = QtWidgets.QListWidget(self)
         self.label_alphabetical_index = QtWidgets.QLabel('<html><head/><body><p>'
                                                          '<span style=\" font-size:14pt;'
