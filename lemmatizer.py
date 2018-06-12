@@ -30,36 +30,51 @@ class Lemmatizer:
             lemmas_hp.append(list())
             if self.dict_of_words.get(words[0]):
                 lemmas_hp[i].append(self.dict_of_words.get(words[0]))
+            elif self.dict_of_words.get(words[0].lower()):
+                lemmas_hp[i].append(self.dict_of_words.get(words[0].lower()))
             else:
-                lemmas_hp[i].append(self.dict_of_words.get(words[0].lower(), words[0]))
+                lemmas_hp[i].append(words[0])
+
             if self.dict_of_words.get(words[1]):
                 lemmas_hp[i].append(self.dict_of_words.get(words[1]))
+            elif self.dict_of_words.get(words[1].lower()):
+                lemmas_hp[i].append(self.dict_of_words.get(words[1].lower()))
             else:
-                lemmas_hp[i].append(self.dict_of_words.get(words[1].lower(), words[1]))
+                lemmas_hp[i].append(words[1])
         print('lemmas hp generated')
         lemmas_nauk = list()
         for i, words in enumerate(words_nauk):
             lemmas_nauk.append(list())
             if self.dict_of_words.get(words[0]):
                 lemmas_nauk[i].append(self.dict_of_words.get(words[0]))
+            elif self.dict_of_words.get(words[0].lower()):
+                lemmas_nauk[i].append(self.dict_of_words.get(words[0].lower()))
             else:
-                lemmas_nauk[i].append(self.dict_of_words.get(words[0].lower(), words[0]))
+                lemmas_nauk[i].append(words[0])
+
             if self.dict_of_words.get(words[1]):
                 lemmas_nauk[i].append(self.dict_of_words.get(words[1]))
+            elif self.dict_of_words.get(words[1].lower()):
+                lemmas_nauk[i].append(self.dict_of_words.get(words[1].lower()))
             else:
-                lemmas_nauk[i].append(self.dict_of_words.get(words[1].lower(), words[1]))
+                lemmas_nauk[i].append(words[1])
         print('lemmas nauk generated')
         lemmas_pb = list()
         for i, words in enumerate(words_pb):
             lemmas_pb.append(list())
             if self.dict_of_words.get(words[0]):
-                lemmas_pb[i].append(self.dict_of_words.get(words[0]))
+                lemmas_pb[i].append(words[0])
+            elif self.dict_of_words.get(words[0].lower()):
+                lemmas_pb[i].append(self.dict_of_words.get(words[0].lower()))
             else:
-                lemmas_pb[i].append(self.dict_of_words.get(words[0].lower(), words[0]))
+                lemmas_pb[i].append(words[0])
+
             if self.dict_of_words.get(words[1]):
                 lemmas_pb[i].append(self.dict_of_words.get(words[1]))
+            elif self.dict_of_words.get(words[1].lower()):
+                lemmas_pb[i].append(self.dict_of_words.get(words[1].lower()))
             else:
-                lemmas_pb[i].append(self.dict_of_words.get(words[1].lower(), words[1]))
+                lemmas_pb[i].append(words[1])
         print('lemmas pb generated')
         return (words_hp, words_nauk, words_pb,
                 lemmas_hp, lemmas_nauk, lemmas_pb)
